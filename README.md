@@ -1,2 +1,10 @@
 # request-version
-request based versions
+
+基于请求的版本号来决定请求到那个接口上，如果只有一个接口，则会忽略此项设置
+
+# 快速开始
+
+1. 引入文件或jar
+2. 复制一样的接口
+3. 标注版本号 `@SinceVersion`
+4. 请求增加版本号字段（默认`x-version`)
