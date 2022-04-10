@@ -11,9 +11,20 @@
 
 # 快速开始
 
+### maven引入
+
+```xml
+
+<dependency>
+    <groupId>io.github.pdkst</groupId>
+    <artifactId>request-version</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ### 1.没有自定义`RequestMappingHandlerMapping`的情况下
 
-1. 引入文件或jar
+1. 引入jar
 2. 复制一样的接口
 3. 标注版本号 `@SinceVersion`
 4. 请求增加版本号字段（默认`x-version`)
@@ -24,6 +35,7 @@
 2. 在自定义的`RequestMappingHandlerMapping`中重写相关接口：
     - getCustomMethodCondition
     - getCustomTypeCondition
+3. 其他步骤同1
 
 # 版本原理
 
