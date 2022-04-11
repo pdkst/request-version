@@ -37,6 +37,57 @@
     - getCustomTypeCondition
 3. 其他步骤同1
 
+# 如何自定义使用
+
+假设接口是： `GET http://localhost:8080/version`
+
+### 1. 从请求头中获取版本：
+
+```java
+ @Bean
+public VersionRequestConditionProvider versionRequestConditionProvider(){
+        return new HeaderVersionRequestConditionProvider("x-version");
+        }
+```
+
+测试：
+
+```http request
+GET http://localhost:8080/version
+x-version: 1.0
+```
+
+### 2.从UserAgent中获取版本
+
+```java
+@Bean
+public VersionRequestConditionProvider versionRequestConditionProvider(){
+        return new UserAgentVersionRequestConditionProvider("version");
+        }
+```
+
+测试：
+
+```http request
+GET http://localhost:8080/version
+user-agent: version/1.0
+```
+
+### 3.从FormValue中获取版本
+
+```java
+@Bean
+public VersionRequestConditionProvider versionRequestConditionProvider(){
+        return new FormVersionRequestConditionProvider("v");
+        }
+```
+
+测试：
+
+```http request
+GET http://localhost:8080/version?v=1.0
+```
+
 # 版本原理
 
 1. 利用spring自定义`RequestCondition`的预留接口，实现同样的请求按照接口不同分发给不同方法，此方法比spring匹配优先级更低

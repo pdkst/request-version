@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletRequest;
  * @since 2022/4/9
  */
 @Slf4j
-public class HeaderVersionRequestConditionProvider extends AbstractNameVersionRequestConditionProvider {
+public class FormVersionRequestConditionProvider extends AbstractNameVersionRequestConditionProvider {
 
-    public HeaderVersionRequestConditionProvider(String... headerNames) {
+    public FormVersionRequestConditionProvider(String... headerNames) {
         super(headerNames);
     }
 
     @Override
     protected String getVersionValue(HttpServletRequest request, String name) {
-        return request.getHeader(name);
+        return request.getParameter(name);
     }
 
 }
