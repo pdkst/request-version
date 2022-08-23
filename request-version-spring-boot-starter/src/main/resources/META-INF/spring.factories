@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.github.pdkst.request.spring.RequestVersionAutoConfiguration
+  io.github.pdkst.RequestVersionAutoConfiguration

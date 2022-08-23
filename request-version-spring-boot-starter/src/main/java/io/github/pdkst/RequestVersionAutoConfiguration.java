@@ -1,5 +1,6 @@
-package io.github.pdkst.request.spring;
+package io.github.pdkst;
 
+import io.github.pdkst.request.spring.CustomWebMvcRegistrations;
 import io.github.pdkst.request.versions.VersionRequestConditionProvider;
 import io.github.pdkst.request.versions.providers.HeaderVersionRequestConditionProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

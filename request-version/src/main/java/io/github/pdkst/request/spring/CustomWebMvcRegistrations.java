@@ -9,7 +9,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  * @author pdkst
  * @since 2022/3/24 15:04
  */
-@Configuration
 public class CustomWebMvcRegistrations implements WebMvcRegistrations {
     private final VersionRequestConditionProvider provider;
 
